@@ -57,12 +57,14 @@ public class FileSystemSearch {
 
         if(directory.canRead()) {
             File[] allFilesIn = directory.listFiles();
-            for (int i = 0; i < allFilesIn.length; i++) {
-                if (allFilesIn[i].isDirectory() &&
-                        !(allFilesIn[i].getAbsolutePath().equals("/proc") ||
-                                allFilesIn[i].getAbsolutePath().equals("/sys")) //TODO убери костыль
-                )
-                    searchUtil(allFilesIn[i], supportedProgList, pathList, progNames);
+            if (allFilesIn != null) {
+                for (int i = 0; i < allFilesIn.length; i++) {
+                    if (allFilesIn[i].isDirectory() &&
+                            !(allFilesIn[i].getAbsolutePath().equals("/proc") ||
+                                    allFilesIn[i].getAbsolutePath().equals("/sys")) //TODO убери костыль
+                    )
+                        searchUtil(allFilesIn[i], supportedProgList, pathList, progNames);
+                }
             }
         }
     }

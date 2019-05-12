@@ -6,7 +6,8 @@ import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
-public class Prog{
+public class Prog {
+
     private String Name;
     private String path;
     private InsideChek insideChek  = new InsideChek();

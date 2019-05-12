@@ -1,6 +1,6 @@
 package fileInsert;
 
-import database.IConfigDB;
+import database.IConfigSetDB;
 import database.IConfigFileDB;
 import database.IProgramDB;
 import database.repositories.DataBase;
@@ -20,7 +20,7 @@ public class FileInsert {
      * @param program
      */
     public static void copyFile(IProgramDB program) throws SQLException {
-        List<IConfigDB> configDBList = DataBase.getInstance().find(program);
+        List<IConfigSetDB> configDBList = DataBase.getInstance().find(program);
         List<IConfigFileDB> configFilesDB = configDBList.get(0).getConfigFiles();
         configFilesDB.forEach(configFileDB -> copyFile(configFileDB.getFilePathBackup(),
                                                             configFileDB.getFilePathProgram()));

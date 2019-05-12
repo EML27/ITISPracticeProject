@@ -15,6 +15,7 @@ public class InsideChek extends Thread{
     private File initRoot;
     private I_TypeOfSearch searchMethod;
     private LinkedHashSet<String> progNames;
+
     public InsideChek(){
         pathList = null;
         initRoot = null;

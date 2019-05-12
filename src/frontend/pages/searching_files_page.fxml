@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#onLoad" onDragDetected="#onLoad" onDragDone="#onLoad" onDragDropped="#onLoad" onDragEntered="#onLoad" onDragExited="#onLoad" onDragOver="#onLoad" onInputMethodTextChanged="#onLoad" onKeyPressed="#onLoad" onKeyReleased="#onLoad" onKeyTyped="#onLoad" onMouseClicked="#onLoad" onMouseDragEntered="#onLoad" onMouseDragExited="#onLoad" onMouseDragOver="#onLoad" onMouseDragReleased="#onLoad" onMouseDragged="#onLoad" onMouseEntered="#onLoad" onMouseExited="#onLoad" onMouseMoved="#onLoad" onMousePressed="#onLoad" onMouseReleased="#onLoad" onRotate="#onLoad" onRotationFinished="#onLoad" onRotationStarted="#onLoad" onScroll="#onLoad" onScrollFinished="#onLoad" onScrollStarted="#onLoad" onSwipeDown="#onLoad" onSwipeLeft="#onLoad" onSwipeRight="#onLoad" onSwipeUp="#onLoad" onTouchMoved="#onLoad" onTouchPressed="#onLoad" onTouchReleased="#onLoad" onTouchStationary="#onLoad" onZoom="#onLoad" onZoomFinished="#onLoad" onZoomStarted="#onLoad" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.SearchingFilesPageController">
+   <children>
+      <Text layoutX="60.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начинаем поиск файлов" wrappingWidth="278.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="39.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пожалуйста, подождите" textAlignment="CENTER" wrappingWidth="319.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="statusText" layoutX="117.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Статус: Поиск...">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -11,7 +11,7 @@ public class ContainerDealer {
         initiate();
     }
 
-    public static  void initiate(){
+    public static void initiate(){
         initiate(PATH_CONTAINER);
     }
 
@@ -33,8 +33,8 @@ public class ContainerDealer {
 
     public static File add(File program, String configName){
         File toReturn = new File(program.getAbsolutePath() + "/" + configName);
-        toReturn.mkdir();
-        return  toReturn;
+        toReturn.mkdirs();
+        return toReturn;
     }
 
 }

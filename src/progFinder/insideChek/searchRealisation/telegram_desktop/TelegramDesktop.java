@@ -23,7 +23,7 @@ public class TelegramDesktop implements I_TypeOfSearch {
             }
         }
 
-        if(counter == 3){
+        if(counter >= 3){
             pathList.add(directory.getAbsolutePath());
             return  true;
         }

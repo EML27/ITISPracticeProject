@@ -1,10 +1,10 @@
 package database.repositories;
 
 import database.IConfigFileDB;
-import database.IConfigDB;
+import database.IConfigSetDB;
 import database.IProgramDB;
-import database.modelsDB.ConfigDB;
 import database.modelsDB.ConfigFileDB;
+import database.modelsDB.ConfigSetDB;
 import database.modelsDB.ConfigInfo;
 import database.modelsDB.ProgramDB;
 
@@ -82,7 +82,7 @@ public class DataBase implements ConfigRepository {
      * @param IConfigDb  interface for config's description
      */
     @Override
-    public void save(IProgramDB IProgramDb, IConfigDB IConfigDb) {
+    public void save(IProgramDB IProgramDb, IConfigSetDB IConfigDb) {
 
         // Program's id
         // Initialise id if data base contains this program
@@ -153,7 +153,7 @@ public class DataBase implements ConfigRepository {
      * @return List of configs.
      */
     @Override
-    public List<IConfigDB> find(IProgramDB IProgramDb) {
+    public List<IConfigSetDB> find(IProgramDB IProgramDb) {
 
         // The SQL Query
         String sqlQuery = "SELECT prco_store.name AS config_name, " +
@@ -194,9 +194,9 @@ public class DataBase implements ConfigRepository {
      * Converts stack of configInfos to the list of 'DBConfigable' interfaces
      *
      * @param configInfos objects to convert to interfaces
-     * @return List of 'IConfigDB' interfaces
+     * @return List of 'IConfigSetDB' interfaces
      */
-    private List<IConfigDB> convertConfigToInterface(Stack<ConfigInfo> configInfos) {
+    private List<IConfigSetDB> convertConfigToInterface(Stack<ConfigInfo> configInfos) {
 
         // key - name of config, value - list of files for this config
         Map<String, List<ConfigFileDB>> configsMap = new HashMap<>();
@@ -211,7 +211,7 @@ public class DataBase implements ConfigRepository {
             configsMap.put(configToAdd.getConfigName(), configFiles);
         }
 
-        Stack<ConfigDB> configsStack = new Stack<>();
+        Stack<ConfigSetDB> configsStack = new Stack<>();
 
         // Rewrites configsMap to the configsStack
         for (String configName : configsMap.keySet()) {
@@ -227,10 +227,10 @@ public class DataBase implements ConfigRepository {
                 configFilesI.add(configFiles.pop());
             }
 
-            configsStack.push(new ConfigDB(configName, configFilesI));
+            configsStack.push(new ConfigSetDB(configName, configFilesI));
         }
 
-        List<IConfigDB> configsListInterfaces = new ArrayList<>();
+        List<IConfigSetDB> configsListInterfaces = new ArrayList<>();
 
         // Rewrites configsStack to the interfaces
         while (!configsStack.isEmpty()) {

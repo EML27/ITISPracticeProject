@@ -4,5 +4,5 @@ import java.io.File;
 import java.util.LinkedList;
 
 public interface I_TypeOfSearch {
-    public boolean search(LinkedList<String> paths, File directory);
+    public boolean search(LinkedList<String> pathsList, File directory);
 }
